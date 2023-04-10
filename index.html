@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div id="main">
+        <form name="form">
+            <input type="text" style="width:86.3%;background-color: silver;; height: 30px;" name="input" placeholder="0"> 
+            <br>
+            <div class="button">
+
+                <input type="button" value="1" onclick="form.input.value+=1"> 
+                <input type="button" value="2" onclick="form.input.value+=2"> 
+                <input type="button" value="3" onclick="form.input.value+=3"> 
+            <input type="button" value="+" onclick="add()"> 
+            <br>    
+            <input type="button" value="4" onclick="form.input.value+=4"> 
+            <input type="button" value="5" onclick="form.input.value+=5"> 
+            <input type="button" value="6" onclick="form.input.value+=6"> 
+            <input type="button" value="-" onclick="subtract()"> 
+            <br>
+            <input type="button" value="7" onclick="form.input.value+=7"> 
+            <input type="button" value="8" onclick="form.input.value+=8"> 
+            <input type="button" value="9" onclick="form.input.value+=9"> 
+            <input type="button" value="*" onclick="multiply()"> 
+            <br>
+            <input type="button" value="C" onclick="form.input.value=''"> 
+            <input type="button" value="0" onclick="form.input.value+=0"> 
+            <input type="button" value="=" onclick="form.input.value=eval(form.input.value)"> 
+            <input type="button" value="/" onclick="divide()"> 
+            <br>
+        </div>
+        </form>
+    </div>
+    <script>
+        function add(){
+            var a=0,b=0;
+            a = form.input.value;
+            b = a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='*' || b=='/'){
+                form.input.value=a.substring(0,a.length-1);
+                form.input.value+='+';
+            }
+            else{
+                form.input.value=a.substring(0,a.length);
+                form.input.value+='+';
+
+            }
+        }
+        function subtract(){
+            var a=0,b=0;
+            a = form.input.value;
+            b = a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='*' || b=='/'){
+                form.input.value=a.substring(0,a.length-1);
+                form.input.value+='-';
+            }
+            else{
+                form.input.value=a.substring(0,a.length );
+                form.input.value+='-';
+
+            }
+        }
+        function multiply(){
+            var a=0,b=0;
+            a = form.input.value;
+            b = a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='*' || b=='/'){
+                form.input.value=a.substring(0,a.length-1);
+                form.input.value+='*';
+            }
+            else{
+                form.input.value=a.substring(0,a.length );
+                form.input.value+='*';
+
+            }
+        }
+        function divide(){
+            var a=0,b=0;
+            a = form.input.value;
+            b = a.charAt(a.length-1);
+            if(b=='+' || b=='-' || b=='*' || b=='/'){
+                form.input.value=a.substring(0,a.length-1);
+                form.input.value+='/';
+            }
+            else{
+                form.input.value=a.substring(0,a.length );
+                form.input.value+='/';
+
+            }
+        }
+    </script>
+</body>
+</html>
